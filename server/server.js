@@ -163,8 +163,5 @@ app.use((err, req, res, next) => {
 
 // Start Server
 app.listen(PORT, () => {
-  console.log(`\n🚀 Customer API running on http://localhost:${PORT}`);
-  console.log(`   GET    http://localhost:${PORT}/customers`);
-  console.log(`   POST   http://localhost:${PORT}/customers`);
-  console.log(`   DELETE http://localhost:${PORT}/customers/:id\n`);
+  console.log(`Server successfully started on port ${PORT}`);
 });
