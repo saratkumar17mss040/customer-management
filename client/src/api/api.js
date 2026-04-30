@@ -1,12 +1,11 @@
-
-const BASE_URL = "/customers";
+const API_URL = import.meta.env.VITE_API_BASE_URL;
 
 /**
  * Fetch all customers from the backend.
  * @returns {Promise<{ data: Customer[], total: number }>}
  */
 export async function fetchCustomers() {
-  const res = await fetch(BASE_URL);
+  const res = await fetch(`${API_URL}/customers`);
   if (!res.ok) throw new Error("Failed to load customers.");
   return res.json();
 }
@@ -17,7 +16,7 @@ export async function fetchCustomers() {
  * @returns {Promise<{ data: Customer }>}
  */
 export async function createCustomer(payload) {
-  const res = await fetch(BASE_URL, {
+  const res = await fetch(`${API_URL}/customers`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(payload),
@@ -40,7 +39,7 @@ export async function createCustomer(payload) {
  * @returns {Promise<{ data: Customer }>}
  */
 export async function deleteCustomer(id) {
-  const res = await fetch(`${BASE_URL}/${id}`, { method: "DELETE" });
+  const res = await fetch(`${API_URL}/customers/${id}`, { method: "DELETE" });
   if (!res.ok) throw new Error("Failed to delete customer.");
   return res.json();
 }
