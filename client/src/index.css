@@ -1,0 +1,94 @@
+/* ============================================================
+   Global Styles & Design System
+   ============================================================ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* Color Palette — deep navy + warm amber accent */
+  --bg-base: #0f1117;
+  --bg-surface: #181c27;
+  --bg-elevated: #1f2435;
+  --bg-hover: #252b3d;
+
+  --border: #2a3045;
+  --border-focus: #c8973a;
+
+  --accent: #c8973a;
+  --accent-light: #e8b45a;
+  --accent-dim: rgba(200, 151, 58, 0.15);
+
+  --text-primary: #eef0f6;
+  --text-secondary: #8890a8;
+  --text-muted: #555e78;
+
+  --danger: #e05c5c;
+  --danger-dim: rgba(224, 92, 92, 0.12);
+
+  --success: #4caf80;
+  --success-dim: rgba(76, 175, 128, 0.12);
+
+  /* Typography */
+  --font-display: "DM Serif Display", Georgia, serif;
+  --font-body: "DM Sans", system-ui, sans-serif;
+
+  /* Spacing */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+
+  /* Shadow */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.5);
+
+  /* Transitions */
+  --transition: 0.18s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-base);
+  color: var(--text-primary);
+  min-height: 100vh;
+  font-size: 15px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(
+      ellipse 80% 50% at 50% -20%,
+      rgba(200, 151, 58, 0.06),
+      transparent
+    ),
+    radial-gradient(
+      ellipse 60% 40% at 80% 80%,
+      rgba(100, 120, 200, 0.04),
+      transparent
+    );
+}
+
+/* ─── Scrollbar ─────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-base);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
